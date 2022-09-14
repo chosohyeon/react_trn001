@@ -1,9 +1,10 @@
 import './App.css';
+import Header from './Header';
 
 function App() {
   return (
     <>
-      REACT_TRN001
+      <Header/>
     </>
   );
 }
