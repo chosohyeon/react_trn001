@@ -1,6 +1,8 @@
 * {
-    outline: 1px solid #f00;
+    /* outline: 1px solid #f00; */
 }
+
+/* ---------- HEADER ---------- */
 
 .Header {
     display: flex;
@@ -46,3 +48,38 @@
 .Header .service button i {
     font-size: 20px;
 }
+
+/* ---------- MAINVISUAL ---------- */
+
+
+.MainVisual figure {
+    width: 800px;
+    height: 600px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% auto;
+  }
+
+.MainVisual .itm01 {
+    background-image: url(../public/assets/img/mainbanner01.png);
+  }
+
+.MainVisual .itm02 {
+    background-image: url(../public/assets/img/mainbanner02.png);
+  }
+
+.MainVisual .itm03 {
+    background-image: url(../public/assets/img/mainbanner03.png);
+  }
+
+.MainVisual .itm04 {
+    background-image: url(../public/assets/img/mainbanner04.png);
+  }
+
+.MainVisual .itm05 {
+    background-image: url(../public/assets/img/mainbanner05.png);
+  }
+
+.MainVisual .itm06 {
+    background-image: url(../public/assets/img/mainbanner06.png);
+  }
