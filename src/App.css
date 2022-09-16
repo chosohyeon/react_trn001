@@ -1,85 +1,140 @@
-* {
-    /* outline: 1px solid #f00; */
+.inner {
+  position: relative;
+  width: 1200px;
+  margin: 0 auto;
 }
 
 /* ---------- HEADER ---------- */
 
 .Header {
-    display: flex;
-    justify-content: space-between;
-    width: 1200px;
-    height: 100px;
-    align-items: center;
-    margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  width: 1200px;
+  height: 100px;
+  align-items: center;
+  margin: 0 auto;
 }
 
 .Header h1 {
-    /* background: #f00; */
-    font-size: 0;
+  font-size: 0;
 }
 
 .Header h1 a {
-    display: inline-block;
-    width: 80px;
-    height: 22px;
-    /* background: rgb(0, 255, 166); */
-    background: url(../public/assets/img/logo.png) no-repeat;
+  display: inline-block;
+  width: 80px;
+  height: 22px;
+  background: url(../public/assets/img/logo.png) no-repeat;
 }
 
 .Header nav ul {
-    display: flex;
-    gap: 80px;
+  display: flex;
+  gap: 80px;
 }
 
 .Header nav ul li a {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 .Header .service {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: 10px;
 }
 
 .Header .service button {
-    border: none;
-    background: none;
+  border: none;
+  background: none;
 }
 
 .Header .service button i {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 /* ---------- MAINVISUAL ---------- */
 
+.MainVisual {
+  position: relative;
+  color: var(--lc);
+  height: 800px;
+}
 
 .MainVisual figure {
-    width: 800px;
-    height: 600px;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 100% auto;
-  }
+  position: relative;
+  height: 800px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100% auto;
+}
+
+.MainVisual figure.on {
+  background-size: 100% auto;
+  transition: 1s;
+}
 
 .MainVisual .itm01 {
-    background-image: url(../public/assets/img/mainbanner01.png);
-  }
+  background-image: url(../public/assets/img/mainbanner01.png);
+}
 
 .MainVisual .itm02 {
-    background-image: url(../public/assets/img/mainbanner02.png);
-  }
+  background-image: url(../public/assets/img/mainbanner02.png);
+}
 
 .MainVisual .itm03 {
-    background-image: url(../public/assets/img/mainbanner03.png);
-  }
+  background-image: url(../public/assets/img/mainbanner03.png);
+}
 
 .MainVisual .itm04 {
-    background-image: url(../public/assets/img/mainbanner04.png);
-  }
+  background-image: url(../public/assets/img/mainbanner04.png);
+}
 
 .MainVisual .itm05 {
-    background-image: url(../public/assets/img/mainbanner05.png);
-  }
+  background-image: url(../public/assets/img/mainbanner05.png);
+}
 
 .MainVisual .itm06 {
-    background-image: url(../public/assets/img/mainbanner06.png);
-  }
+  background-image: url(../public/assets/img/mainbanner06.png);
+}
+
+.MainVisual .tit {
+  font-size: 70px;
+  font-weight: 700;
+  line-height: 85px;
+  margin: 0 0 30px 0;
+}
+
+.MainVisual .des {
+  font-size: 20px;
+  font-weight: 300;
+  margin: 0 0 30px 0;
+}
+
+.MainVisual figure .inner {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* 슬릭슬라이더 깜빡이는 문제 해결 방법 */
+.MainVisual .slick-track,
+.MainVisual .slick-slide {
+  transition-duration: 5ms;
+}
+
+.MainVisual .dots {
+  text-align: center;
+  font-size: 0;
+}
+
+.MainVisual .dots>li {
+  display: inline-block;
+  width: 30px;
+  height: 3px;
+  background: #ddd;
+  margin: 10px;
+  vertical-align: middle;
+  transition: 0.5s;
+}
+
+.MainVisual .dots>li.on {
+  background: rgb(51, 51, 51);
+}

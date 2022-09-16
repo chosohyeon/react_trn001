@@ -11,7 +11,8 @@ const SLIDE = [
     { id: 6, content: <span>다운로드<br />러쉬 9월</span>, desc: "#드래곤스에그#반전매력", link: "/" }
 ]
 
-const Mainvisual = () => {
+const MainVisual = () => {
+    const [slideNum, setSlideNum] = useState(0)
 
     const [IDX, setIDX] = useState();
     useEffect(() => {
@@ -20,14 +21,21 @@ const Mainvisual = () => {
 
     const mainSlide = useRef(null);
 
+    const setting = {
+        arrows: false,
+        afterChange: index => setIDX(index),
+        autoplay: true,
+        autoplaySpeed: 3000,
+    }
+
     return (
         <section className='MainVisual'>
-            <Slider>
+            <Slider {...setting} ref={mainSlide} afterChange={(index) => setSlideNum(index)}>
                 {
-                    SLIDE.map((slide,idx) => {
+                    SLIDE.map((slide, idx) => {
                         return (
                             <figure key={slide.id} className={`itm0${slide.id} ${(idx === IDX ? 'on' : '')}`}>
-                                <div className="inner">
+                                <div className="inner" >
                                     <p className='tit'>{slide.content}</p>
                                     <div className='des'>{slide.desc}</div>
                                 </div>
@@ -35,9 +43,20 @@ const Mainvisual = () => {
                         )
                     })
                 }
-            </Slider>
-        </section>
+            </Slider >
+            <ul className='dots'>
+                    {
+                        SLIDE.map((dot, idx) => <li
+                            key={dot.id}
+                            onClick={() => SLIDE.current.slickGoTo(idx)}
+                            className={slideNum === idx ? 'on' : ''}
+                        >
+                            {dot.id}
+                        </li>)
+                    }
+                </ul>
+        </section >
     )
 }
 
-export default Mainvisual;
+export default MainVisual;
